@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Concepts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>http-basics.htmlHTTP Basics</a></li>
+            <li><a href="web-evolution.html">Web Evolution</a></li>
+            <li>key-concepts.htmlKey Concepts</a></li>
+            <li>references.htmlReferences</a></li>
+            <li>about.htmlAbout</a></li>
+        </ul>
+    </nav>
+
+    <h1>Key Concepts of HTTP</h1>
+
+    <p>
+        Understanding HTTP requires familiarity with several important
+        concepts that make communication between web browsers and servers
+        possible. The following concepts are essential to modern web
+        development and internet communication.
+    </p>
+
+    <div class="toc">
+        <h2>Contents</h2>
+
+        <ol>
+            <li>HTTP Requests</li>
+            <li>HTTP Responses</li>
+            <li>HTTP Methods</li>
+            <li>Status Codes</li>
+            <li>Headers</li>
+            <li>HTTPS</li>
+            <li>Web APIs</li>
+        </ol>
+    </div>
+
+    <h2>1. HTTP Requests</h2>
+
+    <p>
+        An HTTP request is sent from a client, such as a web browser,
+        to a web server. The request asks the server to provide a web page,
+        image, file, or other resource.
+    </p>
+
+    <p>
+        Every request contains a URL, a request method, and optional
+        information in the request headers.
+    </p>
+
+    <h2>2. HTTP Responses</h2>
+
+    <p>
+        After receiving a request, the server sends an HTTP response.
+        The response contains status information, response headers,
+        and the requested content when available.
+    </p>
+
+    <p>
+        Responses tell the browser whether a request was successful
+        or if an error occurred.
+    </p>
+
+    <h2>3. HTTP Methods</h2>
+
+    <p>
+        HTTP methods define the action that the client wants the server
+        to perform.
+    </p>
+
+    <table>
+        <tr>
+            <th>Method</th>
+            <th>Purpose</th>
+        </tr>
+
+        <tr>
+            <td>GET</td>
+            <td>Retrieve data from a server.</td>
+        </tr>
+
+        <tr>
+            <td>POST</td>
+            <td>Send new data to a server.</td>
+        </tr>
+
+        <tr>
+            <td>PUT</td>
+            <td>Replace existing data.</td>
+        </tr>
+
+        <tr>
+            <td>PATCH</td>
+            <td>Partially update data.</td>
+        </tr>
+
+        <tr>
+            <td>DELETE</td>
+            <td>Remove data from a server.</td>
+        </tr>
+    </table>
+
+    <h2>4. Status Codes</h2>
+
+    <p>
+        Status codes are numerical values sent by a server to indicate
+        the result of a request.
+    </p>
+
+    <ul>
+        <li><strong>200 OK</strong> - Request completed successfully.</li>
+        <li><strong>301 Moved Permanently</strong> - Resource has a new location.</li>
+        <li><strong>404 Not Found</strong> - Requested resource does not exist.</li>
+        <li><strong>500 Internal Server Error</strong> - Server encountered a problem.</li>
+    </ul>
+
+    <h2>5. HTTP Headers</h2>
+
+    <p>
+        Headers provide additional information about requests and responses.
+        They help browsers and servers understand how data should be processed.
+    </p>
+
+    <table>
+        <tr>
+            <th>Header</th>
+            <th>Purpose</th>
+        </tr>
+
+        <tr>
+            <td>Host</td>
+            <td>Identifies the target website.</td>
+        </tr>
+
+        <tr>
+            <td>User-Agent</td>
+            <td>Identifies the client software.</td>
+        </tr>
+
+        <tr>
+            <td>Content-Type</td>
+            <td>Specifies the type of content being sent.</td>
+        </tr>
+
+        <tr>
+            <td>Cache-Control</td>
+            <td>Controls caching behavior.</td>
+        </tr>
+    </table>
+
+    <h2>6. HTTPS</h2>
+
+    <p>
+        HTTPS is the secure version of HTTP. It uses Transport Layer
+        Security (TLS) encryption to protect information exchanged
+        between users and websites.
+    </p>
+
+    <p>
+        HTTPS helps prevent unauthorized access to passwords,
+        payment information, and personal data.
+    </p>
+
+    <h2>7. Web APIs</h2>
+
+    <p>
+        Application Programming Interfaces (APIs) allow software
+        systems to communicate using HTTP requests and responses.
+    </p>
+
+    <p>
+        Modern websites, mobile applications, and cloud services
+        often rely on APIs to exchange information.
+    </p>
+
+    <h2>Summary</h2>
+
+    <p>
+        HTTP requests, responses, methods, status codes, headers,
+        HTTPS, and APIs are fundamental concepts that support modern
+        web communication. Understanding these concepts provides a
+        foundation for learning web development and networking.
+    </p>
+
+    <footer>
+        <p>
+            This is a class project for
+            <a href="https://ksuweb.github.io/IT3203/" target="_blank">
+                IT3203 Web Development
+            </a>.
+        </p>
+    </footer>
+
+</body>
+
+</html>
