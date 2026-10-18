@@ -16,8 +16,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navigation */
 nav {
-    border-bottom: 1px solid #a2a9b1;
+    background-color: #f8f9fa;
+    border: 1px solid #a2a9b1;
     margin-bottom: 20px;
+    padding: 10px;
 }
 
 nav ul {
