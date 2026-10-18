@@ -1,5 +1,4 @@
 /* Body */
-
 body {
     font-family: sans-serif;
     line-height: 1.6;
@@ -16,14 +15,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Navigation */
-
 nav {
     border-bottom: 1px solid #a2a9b1;
     margin-bottom: 20px;
 }
 
 nav ul {
-    display: flex;       /* Flexbox requirement */
+    display: flex; /* Flexbox requirement */
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
@@ -34,7 +32,6 @@ nav li {
 }
 
 /* Links */
-
 a {
     color: #0645ad;
     text-decoration: none;
@@ -44,26 +41,24 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Headings */
-
+/* Main Heading */
 h1 {
     border-bottom: 1px solid #a2a9b1;
     padding-bottom: 10px;
 }
 
+/* Section Headings */
 h2 {
     border-bottom: 1px solid #cccccc;
     padding-bottom: 5px;
 }
 
-/* Content boxes */
-
+/* Content Boxes */
 .content-box {
     margin-bottom: 25px;
 }
 
-/* ID selector requirement */
-
+/* ID Selector */
 #welcome {
     background-color: #f8f9fa;
     padding: 15px;
@@ -71,17 +66,15 @@ h2 {
 }
 
 /* Table of Contents */
-
 .toc {
     width: 300px;
-    background: #f8f9fa;
+    background-color: #f8f9fa;
     border: 1px solid #a2a9b1;
     padding: 10px;
     margin: 20px 0;
 }
 
 /* Tables */
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -99,12 +92,15 @@ td {
     padding: 8px;
 }
 
-/* Footer */
+th {
+    background-color: #f8f9fa;
+}
 
+/* Footer */
 footer {
     margin-top: 40px;
     padding-top: 10px;
     border-top: 1px solid #a2a9b1;
     font-size: 0.9em;
 }
-``
+`
