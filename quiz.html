@@ -32,8 +32,10 @@
         Test your understanding of HTTP, web evolution, and related concepts.
         You have 10 minutes to complete the quiz.
     </p>
-
+    <!-- Limit the quiz time to 10 minutes -->
     <h2 id="timer">Time Remaining: 10:00</h2>
+    <!-- Main quiz container -->
+    <div class="quiz-container">
 
     <form id="quizForm">
 
@@ -67,7 +69,7 @@
         <input type="checkbox" id="put"> PUT<br>
         <input type="checkbox" id="delete"> DELETE<br>
 
-        <!-- Additional Questions -->
+        <!-- Additional Knowledge Questions -->
         <h3>7. What status code means that the request was completed successfully?</h3>
         <input type="radio" name="q7" value="200"> 200<br>
         <input type="radio" name="q7" value="404"> 404<br>
@@ -89,21 +91,25 @@
         <input type="radio" name="q10" value="UDP"> UDP<br>
 
         <br>
-
+        <!-- Quiz submission or retake controls -->
         <button type="button" onclick="gradeQuiz()">Submit Quiz</button>
         <button type="reset" onclick="resetQuiz()">Retake Quiz</button>
 
     </form>
-
+    </div>
+    <!-- Quiz results -->
     <div id="results"></div>
 
     <script>
 
+        // Quiz timer values
         let startTime = Date.now();
         let timeLeft = 600;
 
+        // Timer display element
         const timerDisplay = document.getElementById("timer");
 
+        // Timer countdown that updates by the second 
         const countdown = setInterval(function () {
 
             let minutes = Math.floor(timeLeft / 60);
@@ -131,7 +137,7 @@
             let score = 0;
 
             let results = "<h2>Quiz Results</h2>";
-
+            // Function that evaluates answers
             function check(correct, userAnswer, questionNum) {
 
                 if (userAnswer === correct) {
