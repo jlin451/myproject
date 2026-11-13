@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding and page settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Browser tab title -->
+    <title>HTTP Knowledge Quiz</title>
+    <!-- External CSS stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="http-basics.html">HTTP Basics</a></li>
+            <li><a href="web-evolution.html">Web Evolution</a></li>
+            <li><a href="key-concepts.html">Key Concepts</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <h1>HTTP Knowledge Quiz</h1>
+
+    <p>
+        Test your understanding of HTTP, web evolution, and related concepts.
+        You have 10 minutes to complete the quiz.
+    </p>
+
+    <h2 id="timer">Time Remaining: 10:00</h2>
+
+    <form id="quizForm">
+
+        <!-- Fill in the blank questions -->
+        <h3>1. What does HTTP stand for?</h3>
+        <input type="text" id="q1">
+
+        <h3>2. Who created the World Wide Web?</h3>
+        <input type="text" id="q2">
+
+        <!-- Multiple Choice Questions -->
+        <h3>3. Which HTTP method retrieves information?</h3>
+        <input type="radio" name="q3" value="GET"> GET<br>
+        <input type="radio" name="q3" value="POST"> POST<br>
+        <input type="radio" name="q3" value="DELETE"> DELETE<br>
+
+        <h3>4. Which HTTP version introduced multiplexing?</h3>
+        <input type="radio" name="q4" value="HTTP/1.0"> HTTP/1.0<br>
+        <input type="radio" name="q4" value="HTTP/1.1"> HTTP/1.1<br>
+        <input type="radio" name="q4" value="HTTP/2"> HTTP/2<br>
+
+        <h3>5. What is the secure version of HTTP?</h3>
+        <input type="radio" name="q5" value="FTP"> FTP<br>
+        <input type="radio" name="q5" value="HTTPS"> HTTPS<br>
+        <input type="radio" name="q5" value="SMTP"> SMTP<br>
+
+        <!-- Multi Selection -->
+        <h3>6. Select all valid HTTP methods:</h3>
+        <input type="checkbox" id="get"> GET<br>
+        <input type="checkbox" id="post"> POST<br>
+        <input type="checkbox" id="put"> PUT<br>
+        <input type="checkbox" id="delete"> DELETE<br>
+
+        <!-- Additional Questions -->
+        <h3>7. What status code means success?</h3>
+        <input type="radio" name="q7" value="200"> 200<br>
+        <input type="radio" name="q7" value="404"> 404<br>
+        <input type="radio" name="q7" value="500"> 500<br>
+
+        <h3>8. What status code means page not found?</h3>
+        <input type="radio" name="q8" value="404"> 404<br>
+        <input type="radio" name="q8" value="200"> 200<br>
+        <input type="radio" name="q8" value="301"> 301<br>
+
+        <h3>9. Which organization develops web standards?</h3>
+        <input type="radio" name="q9" value="W3C"> W3C<br>
+        <input type="radio" name="q9" value="NBA"> NBA<br>
+        <input type="radio" name="q9" value="NASA"> NASA<br>
+
+        <h3>10. What protocol secures HTTP communications?</h3>
+        <input type="radio" name="q10" value="TLS"> TLS<br>
+        <input type="radio" name="q10" value="TCP"> TCP<br>
+        <input type="radio" name="q10" value="UDP"> UDP<br>
+
+        <br>
+
+        <button type="button" onclick="gradeQuiz()">Submit Quiz</button>
+        <button type="reset" onclick="resetQuiz()">Retake Quiz</button>
+
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+
+        let startTime = Date.now();
+        let timeLeft = 600;
+
+        const timerDisplay = document.getElementById("timer");
+
+        const countdown = setInterval(function () {
+
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+
+            timerDisplay.textContent =
+                "Time Remaining: " +
+                minutes + ":" +
+                String(seconds).padStart(2, "0");
+
+            timeLeft--;
+
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                alert("Time is up! Submitting quiz.");
+                gradeQuiz();
+            }
+
+        }, 1000);
+
+        function gradeQuiz() {
+
+            clearInterval(countdown);
+
+            let score = 0;
+
+            let results = "<h2>Quiz Results</h2>";
+
+            function check(correct, userAnswer, questionNum) {
+
+                if (userAnswer === correct) {
+
+                    score++;
+
+                    results +=
+                        "<p style='color:green'>Question " +
+                        questionNum +
+                        ": Correct</p>";
+
+                }
+
+                else {
+
+                    results +=
+                        "<p style='color:red'>Question " +
+                        questionNum +
+                        ": Incorrect. Correct Answer: " +
+                        correct +
+                        "</p>";
+                }
+            }
+
+            check(
+                "hypertext transfer protocol",
+                document.getElementById("q1").value.toLowerCase().trim(),
+                1
+            );
+
+            check(
+                "tim berners-lee",
+                document.getElementById("q2").value.toLowerCase().trim(),
+                2
+            );
+
+            check("GET",
+                document.querySelector('input[name="q3"]:checked')?.value,
+                3);
+
+            check("HTTP/2",
+                document.querySelector('input[name="q4"]:checked')?.value,
+                4);
+
+            check("HTTPS",
+                document.querySelector('input[name="q5"]:checked')?.value,
+                5);
+
+            if (
+                document.getElementById("get").checked &&
+                document.getElementById("post").checked &&
+                document.getElementById("put").checked &&
+                document.getElementById("delete").checked
+            ) {
+                score++;
+                results += "<p style='color:green'>Question 6: Correct</p>";
+            }
+
+            else {
+
+                results +=
+                    "<p style='color:red'>Question 6: Incorrect. Correct Answer: GET, POST, PUT, DELETE</p>";
+            }
+
+            check("200",
+                document.querySelector('input[name="q7"]:checked')?.value,
+                7);
+
+            check("404",
+                document.querySelector('input[name="q8"]:checked')?.value,
+                8);
+
+            check("W3C",
+                document.querySelector('input[name="q9"]:checked')?.value,
+                9);
+
+            check("TLS",
+                document.querySelector('input[name="q10"]:checked')?.value,
+                10);
+
+            let endTime = Date.now();
+
+            let secondsUsed =
+                Math.floor((endTime - startTime) / 1000);
+
+            results += "<h3>Total Score: " + score + "/10</h3>";
+
+            if (score >= 7) {
+
+                results +=
+                    "<h3 style='color:green'>PASS</h3>";
+            }
+
+            else {
+
+                results +=
+                    "<h3 style='color:red'>FAIL</h3>";
+            }
+
+            results +=
+                "<p>Time Spent: " +
+                secondsUsed +
+                " seconds</p>";
+
+            document.getElementById("results").innerHTML =
+                results;
+        }
+
+        function resetQuiz() {
+
+            location.reload();
+
+        }
+
+    </script>
+
+</body>
+
+</html>
