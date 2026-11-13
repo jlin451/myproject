@@ -76,14 +76,14 @@
         <input type="radio" name="q7" value="500"> 500<br>
 
         <h3>8. What status code means page not found?</h3>
-        <input type="radio" name="q8" value="404"> 404<br>
-        <input type="radio" name="q8" value="200"> 200<br>
         <input type="radio" name="q8" value="301"> 301<br>
+        <input type="radio" name="q8" value="200"> 200<br>
+        <input type="radio" name="q8" value="400"> 400<br>
 
         <h3>9. Which organization develops web standards?</h3>
+        <input type="radio" name="q9" value="W4C"> W4C<br>
         <input type="radio" name="q9" value="W3C"> W3C<br>
-        <input type="radio" name="q9" value="NBA"> NBA<br>
-        <input type="radio" name="q9" value="NASA"> NASA<br>
+        <input type="radio" name="q9" value="ITF"> ITF<br>
 
         <h3>10. What protocol secures HTTP communications?</h3>
         <input type="radio" name="q10" value="TLS"> TLS<br>
@@ -137,22 +137,18 @@
             let score = 0;
 
             let results = "<h2>Quiz Results</h2>";
+
             // Function that evaluates answers
             function check(correct, userAnswer, questionNum) {
 
                 if (userAnswer === correct) {
-
                     score++;
-
                     results +=
                         "<p style='color:green'>Question " +
                         questionNum +
                         ": Correct</p>";
-
                 }
-
                 else {
-
                     results +=
                         "<p style='color:red'>Question " +
                         questionNum +
@@ -197,7 +193,6 @@
             }
 
             else {
-
                 results +=
                     "<p style='color:red'>Question 6: Incorrect. Correct Answer: GET, POST, PUT, DELETE</p>";
             }
@@ -226,13 +221,11 @@
             results += "<h3>Total Score: " + score + "/10</h3>";
 
             if (score >= 7) {
-
                 results +=
                     "<h3 style='color:green'>PASS</h3>";
             }
 
             else {
-
                 results +=
                     "<h3 style='color:red'>FAIL</h3>";
             }
@@ -247,9 +240,7 @@
         }
 
         function resetQuiz() {
-
             location.reload();
-
         }
 
     </script>
