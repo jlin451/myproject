@@ -37,7 +37,7 @@
 
     <form id="quizForm">
 
-        <!-- Fill in the blank questions -->
+        <!-- Two fill in the blank questions -->
         <h3>1. What does HTTP stand for?</h3>
         <input type="text" id="q1">
 
@@ -50,7 +50,7 @@
         <input type="radio" name="q3" value="POST"> POST<br>
         <input type="radio" name="q3" value="DELETE"> DELETE<br>
 
-        <h3>4. Which HTTP version introduced multiplexing?</h3>
+        <h3>4. Which HTTP update added headers, status codes, and content types?</h3>
         <input type="radio" name="q4" value="HTTP/1.0"> HTTP/1.0<br>
         <input type="radio" name="q4" value="HTTP/1.1"> HTTP/1.1<br>
         <input type="radio" name="q4" value="HTTP/2"> HTTP/2<br>
@@ -60,7 +60,7 @@
         <input type="radio" name="q5" value="HTTPS"> HTTPS<br>
         <input type="radio" name="q5" value="SMTP"> SMTP<br>
 
-        <!-- Multi Selection -->
+        <!-- Multi Selection question -->
         <h3>6. Select all valid HTTP methods:</h3>
         <input type="checkbox" id="get"> GET<br>
         <input type="checkbox" id="post"> POST<br>
@@ -68,7 +68,7 @@
         <input type="checkbox" id="delete"> DELETE<br>
 
         <!-- Additional Questions -->
-        <h3>7. What status code means success?</h3>
+        <h3>7. What status code means that the request was completed successfully?</h3>
         <input type="radio" name="q7" value="200"> 200<br>
         <input type="radio" name="q7" value="404"> 404<br>
         <input type="radio" name="q7" value="500"> 500<br>
@@ -172,7 +172,7 @@
                 document.querySelector('input[name="q3"]:checked')?.value,
                 3);
 
-            check("HTTP/2",
+            check("HTTP/1.0",
                 document.querySelector('input[name="q4"]:checked')?.value,
                 4);
 
