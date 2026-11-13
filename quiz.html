@@ -72,13 +72,13 @@
         <!-- Additional Knowledge Questions -->
         <h3>7. What status code means that the request was completed successfully?</h3>
         <input type="radio" name="q7" value="200"> 200<br>
-        <input type="radio" name="q7" value="404"> 404<br>
+        <input type="radio" name="q7" value="400"> 400<br>
         <input type="radio" name="q7" value="500"> 500<br>
 
         <h3>8. What status code means page not found?</h3>
         <input type="radio" name="q8" value="301"> 301<br>
         <input type="radio" name="q8" value="200"> 200<br>
-        <input type="radio" name="q8" value="400"> 400<br>
+        <input type="radio" name="q8" value="404"> 404<br>
 
         <h3>9. Which organization develops web standards?</h3>
         <input type="radio" name="q9" value="W4C"> W4C<br>
@@ -130,6 +130,7 @@
 
         }, 1000);
 
+        // Grades quiz and generates results
         function gradeQuiz() {
 
             clearInterval(countdown);
@@ -235,10 +236,16 @@
                 secondsUsed +
                 " seconds</p>";
 
+            // Display results
             document.getElementById("results").innerHTML =
                 results;
+            // Jump to results section
+            document.getElementById("results").scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
         }
-
+        // Reset quiz and clear results 
         function resetQuiz() {
             location.reload();
         }
