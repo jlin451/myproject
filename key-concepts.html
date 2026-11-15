@@ -59,7 +59,8 @@
     <p>
         An HTTP request is sent from a client, such as a web browser,
         to a web server. The request asks the server to provide a web page,
-        image, file, or other resource.
+        image, file, or other resource. Requests communicate using TCP/IP 
+        sockets to establish connection channels across network infrastructure.
     </p>
 
     <p>
@@ -72,13 +73,15 @@
 
     <p>
         After receiving a request, the server sends an HTTP response.
-        The response contains status information, response headers,
-        and the requested content when available.
+        The response contains status information, response headers
+        (such as Content-Type and Cache-Control), and the requested 
+        content when available.
     </p>
 
     <p>
         Responses tell the browser whether a request was successful
-        or if an error occurred.
+        or if an error occurred through standard three digit HTTP 
+        status codes.
     </p>
 
     <!-- Common HTTP methods used in web communication -->
